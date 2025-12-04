@@ -1,0 +1,207 @@
+:root {
+  --card-bg: #ffffff;
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.08);
+  --text-main: #111827;
+  --text-muted: #4b5563;
+  --border-subtle: #e5e7eb;
+  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.15);
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 32px 16px 48px;
+  font-family: var(--font-sans);
+  color: var(--text-main);
+  position: relative;
+  background: #f5f5f7;
+  min-height: 100vh;
+}
+
+/* 🔹背景写真を薄く表示 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("images/background.jpg") center/cover no-repeat;
+  opacity: 0.22; /* 薄さ調整 (0.15〜0.3あたり推奨) */
+  z-index: -1;
+  pointer-events: none;
+}
+
+.page { max-width: 1980px; margin: 0 auto; }
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #0f172a, #111827);
+  border-radius: 28px;
+  padding: 28px;
+  color: #f9fafb;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(59,130,246,.25),transparent 55%),
+    radial-gradient(circle at bottom left, rgba(34,197,94,.18),transparent 55%);
+  opacity: .9;
+  pointer-events: none;
+}
+
+.hero-inner { position: relative; z-index: 1; }
+.hero-title { font-size:1.9rem;font-weight:700;margin:0 0 .35rem;letter-spacing:.04em; }
+
+.hero-body { font-size:.95rem;line-height:1.6;color:#e5e7eb;max-width:40rem; }
+
+
+/* ===== SECTIONS ===== */
+.section { margin-top:32px; }
+.section-header { display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:16px; }
+.section-title { font-size:1.1rem;font-weight:650;display:flex;align-items:center;gap:.5rem; }
+.section-title span.emoji { font-size:1.2rem; }
+.section-kicker { font-size:.85rem;color:var(--text-muted); }
+
+.card-grid { display:grid;grid-template-columns:1fr;gap:16px; }
+@media(min-width:720px){ .card-grid{grid-template-columns:repeat(2,1fr);} }
+
+/* ===== CARD ===== */
+.card {
+  background:var(--card-bg);border-radius:var(--radius-lg);
+  padding:16px;border:1px solid var(--border-subtle);
+  box-shadow:0 10px 25px rgba(15,23,42,.08);
+  display:flex;flex-direction:column;gap:8px;
+  transition:.18s ease;position:relative;overflow:hidden;
+}
+
+.card::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(37,99,235,.12),transparent 55%);
+  opacity:0;transition:.2s;pointer-events:none;
+}
+
+.card:hover{ transform:translateY(-2px);box-shadow:0 18px 40px rgba(15,23,42,.18);border-color:rgba(37,99,235,.45);}
+.card:hover::before{opacity:1;}
+.card-eyebrow{font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);}
+.card-title{font-size:.97rem;font-weight:650;margin:0;line-height:1.35;}
+.card-title .main{
+  color:#111827;
+  transition:.25s;
+}
+
+.card:hover .card-title .main{
+  background: linear-gradient(135deg,#1e293b,#3b82f6);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.card-body{font-size:.86rem;color:var(--text-muted);line-height:1.6;}
+.card-skills{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.25rem;}
+.pill{font-size:.75rem;padding:.18rem .55rem;border-radius:var(--radius-pill);background:var(--accent-soft);color:#1d4ed8;border:1px solid rgba(37,99,235,.2);}
+.card-footer{margin-top:6px;font-size:.8rem;display:flex;justify-content:space-between;align-items:center;gap:.75rem;}
+
+.card-link{font-size:.8rem;font-weight:600;text-decoration:none;color:var(--accent);display:flex;align-items:center;gap:.28rem;}
+.card-meta{font-size:.75rem;color:var(--text-muted);}
+
+/* ===== STACK ===== */
+.stack-list{display:flex;flex-wrap:wrap;gap:.35rem;}
+.stack-pill{font-size:.78rem;padding:.2rem .65rem;border-radius:var(--radius-pill);border:1px dashed rgba(148,163,184,.9);background:rgba(249,250,251,.9);color:var(--text-muted);white-space:nowrap;}
+
+/* ===== CONTACT ===== */
+.contact{
+  background:#0f172a;color:#e5e7eb;border-radius:22px;padding:18px;margin-top:20px;
+  display:flex;align-items:center;gap:1rem;box-shadow:0 16px 35px rgba(15,23,42,.5);
+}
+
+.contact-main{font-size:.86rem;}
+.contact-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.18em;color:#9ca3af;margin-bottom:4px;}
+
+.contact-mail a{
+  font-weight:600;
+  color:#ffffff;          /* ←確実に見える白 */
+  text-decoration:none;
+}
+.contact-mail a:hover{text-decoration:underline;}
+
+.contact-note{font-size:.76rem;color:#cbd5e1;margin-top:2px;}
+
+@media(max-width:640px){
+  .hero{padding:22px;}
+  .hero-title{font-size:1.5rem;}
+  .contact{flex-direction:column;align-items:flex-start;}
+}
+.skills-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 6px 0;
+}
+
+/* =========================
+   Skills responsive cards
+=========================*/
+
+.skills-badges {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr; /* mobile default */
+}
+
+/* 640px以上 → 2列 */
+@media (min-width: 640px) {
+  .skills-badges {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 1100px以上 → 3列でよりワイドに活用 */
+@media (min-width: 1100px) {
+  .skills-badges {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skills-group {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skills-group-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #475569;
+}
+
+.skills-group-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.skill-badge {
+  font-size: 0.78rem;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: #1f2937;
+  white-space: nowrap;
+}
