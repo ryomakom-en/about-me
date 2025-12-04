@@ -165,27 +165,47 @@
   padding: 6px 0;
 }
 
+/* =========================
+   Skills responsive cards
+=========================*/
+
 .skills-badges {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr; /* mobile default */
+}
+
+/* 640px以上 → 2列 */
+@media (min-width: 640px) {
+  .skills-badges {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 1100px以上 → 3列でよりワイドに活用 */
+@media (min-width: 1100px) {
+  .skills-badges {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .skills-group {
-  padding: 10px 12px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.4);
   backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .skills-group-label {
   font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
+  letter-spacing: .08em;
   color: #475569;
-  margin-bottom: 6px;
 }
 
 .skills-group-badges {
@@ -195,20 +215,13 @@
 }
 
 .skill-badge {
-  font-size: 0.8rem;
-  padding: 0.18rem 0.6rem;
+  font-size: 0.78rem;
+  padding: 0.22rem 0.65rem;
   border-radius: 999px;
-  background: rgba(37, 99, 235, 0.06);
-  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.5);
   color: #1f2937;
   white-space: nowrap;
-}
-
-/* モバイルで圧迫感を減らす */
-@media (max-width: 640px) {
-  .skills-group {
-    padding: 8px 10px;
-  }
 }
 
 
