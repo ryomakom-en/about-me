@@ -330,8 +330,7 @@
     <!-- HERO -->
     <header class="hero">
       <div class="hero-inner">
-        <h1 class="hero-title">Ryoma Komiyama — Data Journalist</h1>
-        <p class="hero-subtitle">Data-driven investigations on elections, public health, and climate risk</p>
+        <h1 class="hero-title">Ryoma Komiyama</h1>
         <p class="hero-body">
          I’m a data journalist at The Asahi Shimbun, reporting stories where numbers lead the narrative. I scrape, clean, and analyze large datasets—using methods such as causal inference and geospatial analysis—and turn them into clear, accessible reporting, often supported by interactive visuals. I document every step in R to keep my work transparent and reproducible.
         </p>
