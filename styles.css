@@ -93,22 +93,29 @@ body::before {
 
 /* プロフィール写真 */
 .profile-photo {
-  width: 88px;
-  height: 88px;
+  width: 115px;         /* ← 88px → 115px ≒1.3倍 */
+  height: 115px;        /* 正方形維持 */
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid rgba(255,255,255,0.6);
   box-shadow: 0 4px 10px rgba(0,0,0,.35);
   transition: transform .3s ease, box-shadow .3s ease, filter .3s ease;
-  margin-left: auto;   /* 右側に寄せる */
+  margin-left: auto;
 }
 
+/* hover効果はそのまま活かす */
 .profile-photo:hover {
   transform: scale(1.08);
   filter: brightness(1.12);
   box-shadow: 0 6px 18px rgba(0,0,0,.55);
 }
 
+@media(min-width:1000px){
+  .profile-photo{
+    width:130px;
+    height:130px;
+  }
+}
 /* ===== SECTIONS ===== */
 .section {
   margin-top: 32px;
