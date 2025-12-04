@@ -111,7 +111,18 @@
     .card:hover::before{opacity:1;}
     .card-eyebrow{font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);}
     .card-title{font-size:.97rem;font-weight:650;margin:0;line-height:1.35;}
-    .card-title .main{-webkit-background-clip:text;background-clip:text;color:transparent;background:linear-gradient(135deg,#111827,#1d4ed8);}
+    .card-title .main{
+  color:#111827;
+  transition:.25s;
+}
+
+.card:hover .card-title .main{
+  background: linear-gradient(135deg,#1e293b,#3b82f6);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
     .card-body{font-size:.86rem;color:var(--text-muted);line-height:1.6;}
     .card-skills{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.25rem;}
     .pill{font-size:.75rem;padding:.18rem .55rem;border-radius:var(--radius-pill);background:var(--accent-soft);color:#1d4ed8;border:1px solid rgba(37,99,235,.2);}
