@@ -476,13 +476,10 @@
       <div class="contact">
         <div class="contact-main">
           <div class="contact-label">Contact</div>
-          <div class="contact-mail">ryomakom [at] gmail.com</div>
+          <address class="contact-mail">ryomakom [at] gmail.com</address>
           <div class="contact-note">
             For collaborations, newsroom projects, or speaking invitations on data journalism and reproducible workflows.
           </div>
-        </div>
-        <div class="contact-chip">
-          This site is a public-facing data-journalism portfolio. No private CV is posted.
         </div>
       </div>
     </section>
