@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
-      --bg: #f5f5f7;
       --card-bg: #ffffff;
       --accent: #2563eb;
       --accent-soft: rgba(37, 99, 235, 0.08);
@@ -27,8 +26,21 @@
       margin: 0;
       padding: 32px 16px 48px;
       font-family: var(--font-sans);
-      background: radial-gradient(circle at top left, #e0ecff 0, #f5f5f7 40%, #f9fafb 100%);
+      background: #f5f5f7; /* 背景色は写真の下地として薄いグレー */
       color: var(--text-main);
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* ページ全体の背景写真（薄く透ける） */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url("images/background.jpg") center center / cover no-repeat;
+      opacity: 0.22; /* ここで「薄さ」を調整：0.15〜0.3くらいで好みに合わせて */
+      z-index: -1;
+      pointer-events: none;
     }
 
     .page {
@@ -67,12 +79,6 @@
       font-weight: 700;
       margin: 0 0 0.35rem;
       letter-spacing: 0.04em;
-    }
-
-    .hero-subtitle {
-      font-size: 0.98rem;
-      color: #d1d5db;
-      margin-bottom: 0.9rem;
     }
 
     .hero-body {
@@ -299,24 +305,12 @@
       margin-top: 2px;
     }
 
-    .contact-chip {
-      font-size: 0.78rem;
-      padding: 0.3rem 0.8rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: rgba(15, 23, 42, 0.8);
-      white-space: nowrap;
-    }
-
     @media (max-width: 640px) {
       .hero {
         padding: 22px 18px 18px;
       }
       .hero-title {
         font-size: 1.5rem;
-      }
-      .hero-subtitle {
-        font-size: 0.9rem;
       }
       .contact {
         flex-direction: column;
@@ -332,7 +326,10 @@
       <div class="hero-inner">
         <h1 class="hero-title">Ryoma Komiyama</h1>
         <p class="hero-body">
-         I’m a data journalist at The Asahi Shimbun, reporting stories where numbers lead the narrative. I scrape, clean, and analyze large datasets—using methods such as causal inference and geospatial analysis—and turn them into clear, accessible reporting, often supported by interactive visuals. I document every step in R to keep my work transparent and reproducible.
+          I’m a data journalist at The Asahi Shimbun, reporting stories where numbers lead the narrative.
+          I scrape, clean, and analyze large datasets—using methods such as causal inference and geospatial
+          analysis—and turn them into clear, accessible reporting, often supported by interactive visuals.
+          I document every step in R to keep my work transparent and reproducible.
         </p>
         <div class="hero-tags">
           <span class="hero-tag">Elections &amp; democracy</span>
@@ -458,31 +455,3 @@
       <div class="section-header">
         <h2 class="section-title">
           <span class="emoji">🛠</span>
-          <span>Methods &amp; tools</span>
-        </h2>
-        <p class="section-kicker">What I use to move from raw data to publishable stories</p>
-      </div>
-      <div class="stack-list">
-        <span class="stack-pill">R (tidyverse, sf, mgcv, plotly, rvest, targets)</span>
-        <span class="stack-pill">Causal inference (matching, quasi-experimental designs)</span>
-        <span class="stack-pill">Geospatial workflows (GIS integration, spatial clustering)</span>
-        <span class="stack-pill">Interactive storytelling (Flourish, plotly, HTML/JS embeds)</span>
-        <span class="stack-pill">Reproducible pipelines (GitHub Pages, GitHub Actions, markdown-first)</span>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section">
-      <div class="contact">
-        <div class="contact-main">
-          <div class="contact-label">Contact</div>
-          <address class="contact-mail">ryomakom [at] gmail.com</address>
-          <div class="contact-note">
-            For collaborations, newsroom projects, or speaking invitations on data journalism and reproducible workflows.
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-</body>
-</html>
