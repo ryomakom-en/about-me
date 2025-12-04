@@ -333,7 +333,7 @@
         <h1 class="hero-title">Ryoma Komiyama — Data Journalist</h1>
         <p class="hero-subtitle">Data-driven investigations on elections, public health, and climate risk</p>
         <p class="hero-body">
-          I am a data journalist at <strong>The Asahi Shimbun</strong>, specializing in large-scale, data-driven investigations on <strong>elections, public health, and climate risk</strong>. My work combines data cleaning, causal inference, geospatial analysis, and interactive visualization — always built on fully reproducible R workflows. I collaborate closely with academic researchers and specialist reporters to keep analyses rigorous and grounded in real-world context.
+         I’m a data journalist at The Asahi Shimbun, reporting stories where numbers lead the narrative. I scrape, clean, and analyze large datasets—using methods such as causal inference and geospatial analysis—and turn them into clear, accessible reporting, often supported by interactive visuals. I document every step in R to keep my work transparent and reproducible.
         </p>
         <div class="hero-tags">
           <span class="hero-tag">Elections &amp; democracy</span>
