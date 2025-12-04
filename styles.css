@@ -205,3 +205,21 @@ body::before {
   color: #1f2937;
   white-space: nowrap;
 }
+
+.profile-photo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 16px;
+  border: 2px solid rgba(255,255,255,0.6);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+  transition: transform .3s ease, box-shadow .3s ease, filter .3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.08);               /* 既存の拡大 */
+  filter: brightness(1.12);             /* ← ふわっと明るく */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.55);
+}
