@@ -158,6 +158,46 @@
       .hero-title{font-size:1.5rem;}
       .contact{flex-direction:column;align-items:flex-start;}
     }
+    .skills-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 6px 0;
+}
+
+.skills-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.05);
+  backdrop-filter: blur(6px);
+}
+
+.skills-category {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.skills-items {
+  color: #475569;
+  font-size: 0.88rem;
+}
+
+@media(max-width:640px) {
+  .skills-row {
+    grid-template-columns: 1fr;
+  }
+  .skills-category {
+    margin-bottom: 4px;
+  }
+}
+
   </style>
 </head>
 
@@ -273,20 +313,51 @@
   </div>
 </section>
 
-  <!-- METHODS -->
-  <section class="section">
-    <div class="section-header">
-      <h2 class="section-title"><span class="emoji">🛠</span>Methods & tools</h2>
-      <p class="section-kicker">From raw data to publishable stories</p>
+<!-- SKILLS / TECH OVERVIEW -->
+<section class="section">
+  <div class="section-header">
+    <h2 class="section-title">
+      <span class="emoji">🧰</span>
+      <span>Technical Skills</span>
+    </h2>
+    <p class="section-kicker">Core capabilities across scraping, modeling, visualization & reproducible publishing</p>
+  </div>
+
+  <div class="skills-table">
+
+    <div class="skills-row">
+      <span class="skills-category">Scraping</span>
+      <span class="skills-items">rvest, RSelenium, API handling, batch automation</span>
     </div>
-    <div class="stack-list">
-      <span class="stack-pill">R tidyverse/sf/mgcv/targets</span>
-      <span class="stack-pill">Causal inference</span>
-      <span class="stack-pill">Geospatial analysis</span>
-      <span class="stack-pill">Interactive storytelling</span>
-      <span class="stack-pill">Reproducible pipelines</span>
+
+    <div class="skills-row">
+      <span class="skills-category">Modeling</span>
+      <span class="skills-items">GAM, matching (MatchIt), GLMs, time-series, causal inference</span>
     </div>
-  </section>
+
+    <div class="skills-row">
+      <span class="skills-category">Visualization</span>
+      <span class="skills-items">ggplot2, plotly, D3 (with AI), maps with sf</span>
+    </div>
+
+    <div class="skills-row">
+      <span class="skills-category">Publishing</span>
+      <span class="skills-items">R Markdown, GitHub Pages, interactive iframes</span>
+    </div>
+
+    <div class="skills-row">
+      <span class="skills-category">Workflow</span>
+      <span class="skills-items">GitHub Actions, reproducible pipelines</span>
+    </div>
+
+    <div class="skills-row">
+      <span class="skills-category">Collaboration</span>
+      <span class="skills-items">academic peer review, domain-reporter workflow</span>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- CONTACT -->
   <section class="section">
