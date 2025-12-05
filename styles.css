@@ -84,12 +84,11 @@ body::before {
   letter-spacing: 0.04em;
 }
 
-/* ← 冒頭の自己紹介文。max-width を外して横幅を広げる */
 .hero-body {
   font-size: 0.95rem;
   line-height: 1.6;
   color: #e5e7eb;
-  /* max-width: 40rem;  ← これを外す */
+  max-width: 50rem;
 }
 
 /* プロフィール写真 */
