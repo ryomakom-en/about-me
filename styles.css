@@ -260,11 +260,6 @@ body::before {
   gap: 0.28rem;
 }
 
-.card-meta {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-
 /* ===== STACK (未使用なら消してOK) ===== */
 .stack-list {
   display: flex;
