@@ -223,6 +223,7 @@ body::before {
   font-size: 0.86rem;
   color: var(--text-muted);
   line-height: 1.6;
+  max-width: 38rem;
 }
 
 .card-skills {
