@@ -399,6 +399,7 @@ body::before {
     font-size: 1.5rem;
   }
   .profile-photo {
+    align-self: flex-end;
     margin-left: 0;
     margin-bottom: 12px;
   }
