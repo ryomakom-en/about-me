@@ -224,21 +224,77 @@ body::before {
   font-size: 0.86rem;
   color: var(--text-muted);
   line-height: 1.6;
+  margin-bottom: 6px;
 }
 
+/* ==== Impact box inside cards (アイコン付き＋hover対応) ==== */
 .card-impact {
   margin: 8px 0 14px;
-  padding: 8px 12px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  background: var(--accent-soft, rgba(37, 99, 235, 0.06));
+  border-left: 3px solid var(--accent, #2563eb);
   font-size: 0.88rem;
   line-height: 1.5;
-  border-radius: 8px;
-  background: var(--accent-soft, rgba(37, 99, 235, 0.08));
-  border-left: 3px solid var(--accent, #2563eb);
+  color: var(--text-main, #111827);
+  transition:
+    background-color 0.18s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.18s ease,
+    border-left-width 0.15s ease;
+}
+
+.card-impact-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent, #2563eb);
+}
+
+.impact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.7);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.impact-label {
+  font-weight: 600;
+}
+
+.impact-text {
+  margin: 0;
+  font-size: 0.88rem;
   color: var(--text-main, #111827);
 }
 
-.card-body { margin-bottom: 6px; }
+/* カード hover 時に Impact ボックスをふわっと強調 */
+.card:hover .card-impact {
+  background: rgba(37, 99, 235, 0.10);
+  border-color: var(--accent, #2563eb);
+  border-left-width: 4px;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+}
 
+.card:hover .card-impact .impact-icon {
+  transform: scale(1.06);
+  box-shadow: 0 0 0 1px var(--accent, #2563eb);
+  background-color: #ffffff;
+}
 
 .pill {
   font-size: 0.75rem;
