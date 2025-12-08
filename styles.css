@@ -224,15 +224,21 @@ body::before {
   font-size: 0.86rem;
   color: var(--text-muted);
   line-height: 1.6;
-  /* max-width: 45rem; ← これも実質効いてないので外してOK */
 }
 
-.card-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  margin-top: 0.25rem;
+.card-impact {
+  margin: 8px 0 14px;
+  padding: 8px 12px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  border-radius: 8px;
+  background: var(--accent-soft, rgba(37, 99, 235, 0.08));
+  border-left: 3px solid var(--accent, #2563eb);
+  color: var(--text-main, #111827);
 }
+
+.card-body { margin-bottom: 6px; }
+
 
 .pill {
   font-size: 0.75rem;
