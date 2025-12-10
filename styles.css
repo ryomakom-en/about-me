@@ -179,19 +179,19 @@ body::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-size: 70%, 140%;
   background-position: center;
+  background-size: cover;         /* ←縦横に合わせて拡大、はみ出しOK */
   background-repeat: no-repeat;
-  opacity: 0.18;                 /* 通常時の薄さ */
-  filter: grayscale(100%);       /* 主張を抑える */
+  opacity: 0.22;                  /* 薄さ（0.15〜0.35推奨） */
   pointer-events: none;
   transition: opacity .25s;
   z-index: 0;
+  mix-blend-mode: normal;         /* 色を残す（colorを維持） */
 }
 
-/* hover時に少しだけ強く */
+/* hoverでほんのり強調 */
 .card:hover::before {
-  opacity: 0.32;
+  opacity: .35;
 }
 
 .card:hover {
@@ -203,28 +203,30 @@ body::before {
 /* ===== カードごとの背景グラフィック ===== */
 /* 画像は images/bg_*.svg などとして用意 */
 
+
+/* ===== 各カード背景（PNG対応） ===== */
 .card-populist::before {
-  background:
-    url("images/bg_populist.png") center/70% no-repeat,
-    linear-gradient(135deg, rgba(37,99,235,.10), transparent 55%);
+  background-image: 
+    linear-gradient(rgba(255,255,255,.55), rgba(255,255,255,.55)), /* ←薄く白を被せて淡く */
+    url("images/bg_populist.png");
 }
 
 .card-covid::before {
-  background:
-    url("images/bg_covid.png") center/70% no-repeat,
-    linear-gradient(135deg, rgba(37,99,235,.10), transparent 55%);
+  background-image:
+    linear-gradient(rgba(255,255,255,.55), rgba(255,255,255,.55)),
+    url("images/bg_covid.png");
 }
 
 .card-heat::before {
-  background:
-    url("images/bg_heat.png") center/70% no-repeat,
-    linear-gradient(135deg, rgba(37,99,235,.10), transparent 55%);
+  background-image:
+    linear-gradient(rgba(255,255,255,.50), rgba(255,255,255,.50)),
+    url("images/bg_heat.png");
 }
 
 .card-sect::before {
-  background:
-    url("images/bg_sect.png") center/70% no-repeat,
-    linear-gradient(135deg, rgba(37,99,235,.10), transparent 55%);
+  background-image:
+    linear-gradient(rgba(255,255,255,.55), rgba(255,255,255,.55)),
+    url("images/bg_sect.png");
 }
 
 .card-eyebrow {
