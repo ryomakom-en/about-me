@@ -217,7 +217,7 @@ body::before {
 
 .card-heat::before {
   background:
-    url("images/bg_heat.bng") center/70% no-repeat,
+    url("images/bg_heat.png") center/70% no-repeat,
     linear-gradient(135deg, rgba(37,99,235,.10), transparent 55%);
 }
 
