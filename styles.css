@@ -174,14 +174,24 @@ body::before {
   overflow: hidden;
 }
 
+/* ▼カード共通の背景レイヤー（画像&グラデーションを受ける土台） */
 .card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(37,99,235,.12), transparent 55%);
-  opacity: 0;
-  transition: .2s;
+  background-size: 70%, 140%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.18;                 /* 通常時の薄さ */
+  filter: grayscale(100%);       /* 主張を抑える */
   pointer-events: none;
+  transition: opacity .25s;
+  z-index: 0;
+}
+
+/* hover時に少しだけ強く */
+.card:hover::before {
+  opacity: 0.32;
 }
 
 .card:hover {
@@ -190,8 +200,31 @@ body::before {
   border-color: rgba(37,99,235,.45);
 }
 
-.card:hover::before {
-  opacity: 1;
+/* ===== カードごとの背景グラフィック ===== */
+/* 画像は images/bg_*.svg などとして用意 */
+
+.card-populist::before {
+  background:
+    url("images/bg_populist.png") center/70% no-repeat,
+    linear-gradient(135deg, rgba(37,99,235,.10), transparent 55%);
+}
+
+.card-covid::before {
+  background:
+    url("images/bg_covid.png") center/70% no-repeat,
+    linear-gradient(135deg, rgba(37,99,235,.10), transparent 55%);
+}
+
+.card-heat::before {
+  background:
+    url("images/bg_heat.bng") center/70% no-repeat,
+    linear-gradient(135deg, rgba(37,99,235,.10), transparent 55%);
+}
+
+.card-sect::before {
+  background:
+    url("images/bg_sect.png") center/70% no-repeat,
+    linear-gradient(135deg, rgba(37,99,235,.10), transparent 55%);
 }
 
 .card-eyebrow {
