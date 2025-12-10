@@ -182,7 +182,7 @@ body::before {
   background-position: center;
   background-size: cover;         /* ←縦横に合わせて拡大、はみ出しOK */
   background-repeat: no-repeat;
-  opacity: 0.22;                  /* 薄さ（0.15〜0.35推奨） */
+  opacity: 0.15;                  /* 薄さ（0.15〜0.35推奨） */
   pointer-events: none;
   transition: opacity .25s;
   z-index: 0;
@@ -191,7 +191,7 @@ body::before {
 
 /* hoverでほんのり強調 */
 .card:hover::before {
-  opacity: .35;
+  opacity: .22;
 }
 
 .card:hover {
