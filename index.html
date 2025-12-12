@@ -18,7 +18,8 @@
       <p class="hero-body">
         I’m a data journalist at The Asahi Shimbun (Japan’s No.2 daily), reporting stories where 
         numbers drive the narrative. Working with frontline reporters and academic researchers, 
-        I manage the full data workflow—from scraping and cleaning to statistical analysis and 
+        I manage the full data workflow—from acquiring data that isn’t readily available 
+        (APIs, web scraping, PDFs, and irregular spreadsheets) to statistical analysis and 
         interactive visualization—using reproducible R pipelines that keep evidence transparent 
         and verifiable.</p>
     </div>
@@ -169,23 +170,36 @@
       <span>Skills</span>
     </h2>
     <p class="section-kicker">
-      A list of things I use to build data stories
+      Tools and methods I use across the full workflow
     </p>
   </div>
 
   <div class="skills-badges">
 
+    <!-- DATA COLLECTION -->
     <div class="skills-group">
-      <div class="skills-group-label">Scraping</div>
+      <div class="skills-group-label">Data Collection</div>
       <div class="skills-group-badges">
-        <span class="skill-badge">rvest</span>
-        <span class="skill-badge">API handling</span>
-        <span class="skill-badge">batch automation</span>
+        <span class="skill-badge">APIs (httr)</span>
+        <span class="skill-badge">Web scraping (rvest, xml2)</span>
+        <span class="skill-badge">PDF extraction (pdftools)</span>
+        <span class="skill-badge">Irregular Excel layouts (tidyxl, unpivotr)</span>
       </div>
     </div>
 
+    <!-- DATA WRANGLING -->
     <div class="skills-group">
-      <div class="skills-group-label">Analysis</div>
+      <div class="skills-group-label">Data Wrangling</div>
+      <div class="skills-group-badges">
+        <span class="skill-badge">tidyverse</span>
+        <span class="skill-badge">data cleaning</span>
+        <span class="skill-badge">data reshaping</span>
+      </div>
+    </div>
+
+    <!-- ANALYSIS -->
+    <div class="skills-group">
+      <div class="skills-group-label">Statistical Analysis</div>
       <div class="skills-group-badges">
         <span class="skill-badge">regression</span>
         <span class="skill-badge">hypothesis testing</span>
@@ -194,31 +208,26 @@
       </div>
     </div>
 
+    <!-- VISUALIZATION -->
     <div class="skills-group">
-      <div class="skills-group-label">Viz</div>
+      <div class="skills-group-label">Visualization</div>
       <div class="skills-group-badges">
         <span class="skill-badge">ggplot2</span>
         <span class="skill-badge">plotly</span>
         <span class="skill-badge">Flourish</span>
+        <span class="skill-badge">maps (sf)</span>
         <span class="skill-badge">D3 (with AI assistance)</span>
-        <span class="skill-badge">maps with sf</span>
       </div>
     </div>
 
+    <!-- PUBLISHING -->
     <div class="skills-group">
-      <div class="skills-group-label">Publishing</div>
+      <div class="skills-group-label">Publishing & Reproducibility</div>
       <div class="skills-group-badges">
         <span class="skill-badge">R Markdown</span>
         <span class="skill-badge">GitHub Pages</span>
-        <span class="skill-badge">interactive iframes</span>
-      </div>
-    </div>
-
-    <div class="skills-group">
-      <div class="skills-group-label">Workflow</div>
-      <div class="skills-group-badges">
-        <span class="skill-badge">GitHub Actions</span>
-        <span class="skill-badge">reproducible pipelines</span>
+        <span class="skill-badge">interactive embeds</span>
+        <span class="skill-badge">GitHub Actions (basic)</span>
       </div>
     </div>
 
